@@ -8,8 +8,8 @@ st.set_page_config(
 
 st.title("📚 Semester Result & Attendance Management System")
 st.write(
-    "Enter obtained and total marks. The table will show exact weighted marks"
-    " for each component and the final total score out of 100."
+    "Enter obtained and total marks. Numbers will increment by 1 (e.g., 42,"
+    " 43)."
 )
 
 # Sidebar for Weightages (Directly out of 100)
@@ -40,59 +40,59 @@ with st.form("student_form", clear_on_submit=True):
 
   st.markdown("---")
 
-  # Attendance Inputs
+  # Attendance Inputs (step=1.0 added)
   c1, c2 = st.columns(2)
   with c1:
     att_obt = st.number_input(
-        "Attendance Obtained Marks", 0.0, 1000.0, 8.0, key="att_o"
+        "Attendance Obtained Marks", 0.0, 1000.0, 8.0, step=1.0, key="att_o"
     )
   with c2:
     att_tot = st.number_input(
-        "Attendance Total Marks", 1.0, 1000.0, 10.0, key="att_t"
+        "Attendance Total Marks", 1.0, 1000.0, 10.0, step=1.0, key="att_t"
     )
 
-  # Quiz Inputs
+  # Quiz Inputs (step=1.0 added)
   c3, c4 = st.columns(2)
   with c3:
     quiz_obt = st.number_input(
-        "Quizzes Obtained Marks", 0.0, 1000.0, 15.0, key="q_o"
+        "Quizzes Obtained Marks", 0.0, 1000.0, 15.0, step=1.0, key="q_o"
     )
   with c4:
     quiz_tot = st.number_input(
-        "Quizzes Total Marks", 1.0, 1000.0, 20.0, key="q_t"
+        "Quizzes Total Marks", 1.0, 1000.0, 20.0, step=1.0, key="q_t"
     )
 
-  # Assignment Inputs
+  # Assignment Inputs (step=1.0 added)
   c5, c6 = st.columns(2)
   with c5:
     asg_obt = st.number_input(
-        "Assignments Obtained Marks", 0.0, 1000.0, 18.0, key="asg_o"
+        "Assignments Obtained Marks", 0.0, 1000.0, 18.0, step=1.0, key="asg_o"
     )
   with c6:
     asg_tot = st.number_input(
-        "Assignments Total Marks", 1.0, 1000.0, 20.0, key="asg_t"
+        "Assignments Total Marks", 1.0, 1000.0, 20.0, step=1.0, key="asg_t"
     )
 
-  # Mid Exam Inputs
+  # Mid Exam Inputs (step=1.0 added)
   c7, c8 = st.columns(2)
   with c7:
     mid_obt = st.number_input(
-        "Mid Exam Obtained Marks", 0.0, 1000.0, 25.0, key="mid_o"
+        "Mid Exam Obtained Marks", 0.0, 1000.0, 25.0, step=1.0, key="mid_o"
     )
   with c8:
     mid_tot = st.number_input(
-        "Mid Exam Total Marks", 1.0, 1000.0, 30.0, key="mid_t"
+        "Mid Exam Total Marks", 1.0, 1000.0, 30.0, step=1.0, key="mid_t"
     )
 
-  # Final Exam Inputs
+  # Final Exam Inputs (step=1.0 added)
   c9, c10 = st.columns(2)
   with c9:
     final_obt = st.number_input(
-        "Final Exam Obtained Marks", 0.0, 1000.0, 42.0, key="fin_o"
+        "Final Exam Obtained Marks", 0.0, 1000.0, 42.0, step=1.0, key="fin_o"
     )
   with c10:
     final_tot = st.number_input(
-        "Final Exam Total Marks", 1.0, 1000.0, 50.0, key="fin_t"
+        "Final Exam Total Marks", 1.0, 1000.0, 50.0, step=1.0, key="fin_t"
     )
 
   submit_btn = st.form_submit_button("Add Student & Calculate Result")
